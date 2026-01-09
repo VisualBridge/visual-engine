@@ -16,8 +16,10 @@
 ===============================================================================
 */
 #pragma once
+#include <iostream>
 #include <SDL3/SDL.h>
 
+#define IMGUI_SDL "../../thirdparty/x64-windows/include/imgui_impl_sdl3.h"
 
 namespace Visual::def
 {

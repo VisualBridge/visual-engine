@@ -22,10 +22,11 @@ file(GLOB_RECURSE SOURCES
     "source/*.hxx"
     "source/*/.hxx"
     "source/*/.cxx" 
-
+    "source/*/*.c"
+    "source/*/*.h"
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES} "thirdparty/hashlink/include/hl.h" "thirdparty/hashlink/include/hlc.h" "thirdparty/hashlink/include/hlc_main.c")
+add_executable(${PROJECT_NAME} ${SOURCES} "thirdparty/hashlink/include/hl.h" "thirdparty/hashlink/include/hlc.h" "thirdparty/hashlink/include/hlc_main.c" "source/core/cvar.c" "source/core/cvar.h")
 
 target_link_libraries(${PROJECT_NAME} 
     PRIVATE

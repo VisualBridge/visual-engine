@@ -25,15 +25,27 @@ namespace Visual::structs
 {
     struct Entity 
     {
-        uint32_t    id;
+        uint32_t id;
         std::string name;
-        glm::vec3   position = { 0,0,0 };
-        glm::vec3   rotation = { 0,0,0 };
-        int         modelIndex = 0;
+        std::vector<std::unique_ptr<Component>> components;
+
+        template<typename T, typename... Args>
+        T& AddComponent(Args&&... args) 
+        {
+            components.push_back(std::make_unique<T>(std::forward<Args>(args)...));
+            return *static_cast<T*>(components.back().get());
+        }
     };
     struct Scene
     {
         using EntityList = std::vector<Entity>;
         using EntityMap  = std::unordered_map<std::string, Entity>;
+    };
+    class Component 
+    {
+      public:
+        virtual ~Component() = default;
+        virtual void OnUpdate(float delta) {}
+        virtual void OnRender() {}
     };
 }

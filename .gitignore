@@ -28,3 +28,4 @@ haxe_bin/
 *.hclog
 .DS_Store
 Thumbs.db
+[Oo]ld[Cc]/
