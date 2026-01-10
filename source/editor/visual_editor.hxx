@@ -17,17 +17,15 @@
 */
 #pragma once
 #include "../core/visual_def.hxx"
-#include <SDL3/SDL.h>
-#define IMGUI_IMPL_OPENGL_LOADER_GLAD
-#include <imgui.h>
 #include <imgui_impl_sdl3.h>
-// #include IMGUI_SDL // Intellisense issues
+#include <imgui.h>
+//#include IMGUI_SDL // Intellisense issues
 #include <imgui_impl_opengl3.h>
-
+#include <SDL3/SDL.h>
 
 namespace Visual::Editor
 {
-    inline void ApplyElectronStyle()
+    inline void ApplyMonolithStyle() // Thanks Gemini for this name
     {
         auto& io = ImGui::GetIO();
         io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;         // Enable snapping windows
@@ -43,7 +41,7 @@ namespace Visual::Editor
     {
         IMGUI_CHECKVERSION();
         ImGui::CreateContext();
-        ApplyElectronStyle();
+        ApplyMonolithStyle();
 
         ImGui_ImplSDL3_InitForOpenGL(window, context);
         ImGui_ImplOpenGL3_Init("#version 440");

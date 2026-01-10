@@ -124,86 +124,6 @@ Abi: f7a3241384e636aae1f2b49994d2bf39879606f1d3071cb4817e3e2e3f1aac80
 Description: The Open Asset import library
 Status: install ok installed
 
-Package: egl-registry
-Version: 2025-05-27
-Architecture: x64-windows
-Multi-Arch: same
-Abi: f8ed2a929e99f15d634f54732bc6abbe122f18519373fb5d7cc42bf2ae059616
-Description: EGL API and Extension Registry
-Status: install ok installed
-
-Package: opengl-registry
-Version: 2025-10-23
-Depends: egl-registry
-Architecture: x64-windows
-Multi-Arch: same
-Abi: c24670c6ce9896bd6eeb42856d6af2f7b33c4ec075b250b42d26bb8942ddc5fc
-Description: OpenGL, OpenGL ES, and OpenGL ES-SC API and Extension Registry
-Status: install ok installed
-
-Package: glad
-Version: 0.1.36
-Depends: egl-registry, opengl-registry, vcpkg-cmake, vcpkg-cmake-config
-Architecture: x64-windows
-Multi-Arch: same
-Abi: cea601b28f1f19ca9179054a0ccf37cb035fe681a0d57ea47772a3bfaccc37c9
-Description: Multi-Language Vulkan/GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs.
-Default-Features: loader
-Status: install ok installed
-
-Package: glad
-Feature: loader
-Architecture: x64-windows
-Multi-Arch: same
-Description: Generate loader logic.
-Status: install ok installed
-
-Package: glm
-Version: 1.0.2
-Depends: vcpkg-cmake, vcpkg-cmake-config
-Architecture: x64-windows
-Multi-Arch: same
-Abi: 7f4475ff7b65d1bd427585b725c356cea43117d0b6c78ed1df09086aaf7c7e93
-Description: OpenGL Mathematics (GLM)
-Status: install ok installed
-
-Package: sdl3
-Version: 3.2.28
-Depends: vcpkg-cmake, vcpkg-cmake-config
-Architecture: x64-windows
-Multi-Arch: same
-Abi: cdb44ed869d0b28b2288dccec500ec6ab323e298a37180a80fdcde5884797924
-Description: Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D.
-Status: install ok installed
-
-Package: sdl3-image
-Version: 3.2.4
-Depends: sdl3, vcpkg-cmake, vcpkg-cmake-config
-Architecture: x64-windows
-Multi-Arch: same
-Abi: 8184f08d1d7c2461537f7f06e32fa8fc9fb68348ce2d5f887fedf0331f653851
-Description: SDL_image is an image file loading library. It loads images as SDL surfaces and textures, and supports the following formats: BMP, GIF, JPEG, LBM, PCX, PNG, PNM, TGA, TIFF, WEBP, XCF, XPM, XV
-Status: install ok installed
-
-Package: imgui
-Version: 1.91.9
-Depends: vcpkg-cmake, vcpkg-cmake-config
-Architecture: x64-windows
-Multi-Arch: same
-Abi: d9ccce6b463f15ec58f6a07ac24effd08dd254223028fd2d3419eb55a7f3a4be
-Description: Bloat-free Immediate Mode Graphical User interface for C++ with minimal dependencies.
-Status: install ok installed
-
-Package: imguizmo
-Version: 2024-05-29
-Port-Version: 1
-Depends: imgui, vcpkg-cmake, vcpkg-cmake-config
-Architecture: x64-windows
-Multi-Arch: same
-Abi: bbc8a383690b59489793d43decf6b8881f69edcd4e4e2d5821a402de6f90c19e
-Description: Immediate mode 3D gizmo for scene editing and other controls based on Dear ImGui
-Status: install ok installed
-
 Package: brotli
 Version: 1.2.0
 Depends: vcpkg-cmake, vcpkg-cmake-config
@@ -282,21 +202,31 @@ Multi-Arch: same
 Description: Use zlib instead of internal library for DEFLATE
 Status: install ok installed
 
-Package: sdl3-ttf
-Version: 3.2.2
-Port-Version: 1
-Depends: freetype, sdl3, vcpkg-cmake, vcpkg-cmake-config
+Package: glm
+Version: 1.0.2
+Depends: vcpkg-cmake, vcpkg-cmake-config
 Architecture: x64-windows
 Multi-Arch: same
-Abi: 2da723726439b83805fcf6d22674c7bb2d30d96c8f43e4738e731eac3f6dfb20
-Description: A library for rendering TrueType fonts with SDL
+Abi: 7f4475ff7b65d1bd427585b725c356cea43117d0b6c78ed1df09086aaf7c7e93
+Description: OpenGL Mathematics (GLM)
+Status: install ok installed
+
+Package: sdl3
+Version: 3.2.28
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: cdb44ed869d0b28b2288dccec500ec6ab323e298a37180a80fdcde5884797924
+Description: Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D.
 Status: install ok installed
 
 Package: imgui
-Feature: docking-experimental
+Version: 1.91.9
+Depends: vcpkg-cmake, vcpkg-cmake-config
 Architecture: x64-windows
 Multi-Arch: same
-Description: Build with docking support
+Abi: dfd5a03684de6ad9ca84586c033acf848ef817f6046201af1101c13e5fc2d1f4
+Description: Bloat-free Immediate Mode Graphical User interface for C++ with minimal dependencies.
 Status: install ok installed
 
 Package: imgui
@@ -312,5 +242,24 @@ Depends: sdl3
 Architecture: x64-windows
 Multi-Arch: same
 Description: Make available SDL3 binding
+Status: install ok installed
+
+Package: sdl3-image
+Version: 3.2.4
+Depends: sdl3, vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 8184f08d1d7c2461537f7f06e32fa8fc9fb68348ce2d5f887fedf0331f653851
+Description: SDL_image is an image file loading library. It loads images as SDL surfaces and textures, and supports the following formats: BMP, GIF, JPEG, LBM, PCX, PNG, PNM, TGA, TIFF, WEBP, XCF, XPM, XV
+Status: install ok installed
+
+Package: sdl3-ttf
+Version: 3.2.2
+Port-Version: 1
+Depends: freetype, sdl3, vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 2da723726439b83805fcf6d22674c7bb2d30d96c8f43e4738e731eac3f6dfb20
+Description: A library for rendering TrueType fonts with SDL
 Status: install ok installed
 

@@ -33,7 +33,6 @@
 
 int main() 
 {
-    static cvar_t engine_version = {"visual_version", "0.0.1", qtrue};
     hl_global_init();
 
     SDL_SetMainReady();

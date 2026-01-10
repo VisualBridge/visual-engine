@@ -20,14 +20,15 @@
 #include <vector>
 #include <unordered_map>
 #include <string>
+#include <memory>
 
 namespace Visual::structs
 {
     struct Entity 
     {
-        uint32_t id;
-        std::string name;
-        std::vector<std::unique_ptr<Component>> components;
+        uint32_t                                id;                  // unique id for entity
+        std::string                             name;                // name of entity
+        std::vector<std::unique_ptr<Component>> components;          // list of components
 
         template<typename T, typename... Args>
         T& AddComponent(Args&&... args) 
